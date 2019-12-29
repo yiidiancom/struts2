@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    
+	<!-- 方式一：传统的访问方式 -->
+	<package name="base" extends="struts-default" namespace="/">
+		
+		<!-- 全局视图 -->
+		<global-results>
+			<result name="login" type="redirect">/login.jsp</result>
+		</global-results>
+	
+		<action name="save" class="com.yiidian.action.DemoAction" method="save">
+			<result type="redirectAction">list</result>
+			<result name="login" type="redirect">/login2.jsp</result>
+		</action>
+		<action name="list" class="com.yiidian.action.DemoAction" method="list">
+			<result>/succ.jsp</result>
+		</action>
+	</package>
+	
+</struts>

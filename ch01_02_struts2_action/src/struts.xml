@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="base" extends="struts-default" namespace="/">
+		<!-- 第一种写法：不实现接口和继承类 -->
+		<action name="demo1" class="com.yiidian.action.Demo1Action" method="hello">
+			<result name="success">/succ.jsp</result>
+		</action>
+		<!-- 第二种写法：实现Struts2的Actio接口 -->
+		<action name="demo2" class="com.yiidian.action.Demo2Action">
+			<result name="success">/succ.jsp</result>
+		</action>
+		<!-- 第三种写法：继承Struts2的ActioSupport类 -->
+		<action name="demo3" class="com.yiidian.action.Demo3Action">
+			<result name="success">/succ.jsp</result>
+		</action>
+	</package>
+</struts>

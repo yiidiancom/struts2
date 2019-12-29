@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="base" extends="struts-default" namespace="/customer">
+	    <!-- 这里customerAction的名称必须和Spring创建的Action对象的名称一致 -->
+		<action name="save" class="customerAction" method="save">
+			<result>/succ.jsp</result>
+		</action>
+	</package>
+</struts>

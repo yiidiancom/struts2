@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">	
+<struts>
+	<package name="base" extends="struts-default" namespace="/">
+		<!-- 1.定义拦截器 -->
+		<interceptors>
+			<interceptor name="myInterceptor1" class="com.yiidian.interceptor.MyInterceptor1"/>
+			<interceptor name="myInterceptor2" class="com.yiidian.interceptor.MyInterceptor2"/>
+			
+			<!-- 2.定义拦截器栈 -->
+			<interceptor-stack name="myStack">
+			    <!-- 手动添加Struts2的默认拦截器栈 -->
+			    <interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="myInterceptor1"/>
+				<interceptor-ref name="myInterceptor2"/>
+			</interceptor-stack>
+		</interceptors>
+		
+		<action name="demo1" class="com.yiidian.action.Demo1Action">
+			<!-- 3.使用拦截器栈 -->
+		    <interceptor-ref name="myStack"/>	
+			<result>/succ.jsp</result>
+		</action>
+	</package>
+	
+</struts>

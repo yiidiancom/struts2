@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <!-- 必须继承json-default包，json-default包是在struts2-json-plugin-2.5.13.jar定义的 -->
+	<package name="base" extends="json-default" namespace="/">
+		<action name="demo1" class="com.yiidian.action.Demo1Action">
+		    <!-- 类型必须是json -->
+			<result type="json">
+			    <!-- root代表输出的是ValueStack的数据 ，userList名称和Action的getUserList的属性名称一致-->
+				<param name="root">userList</param>
+			</result>
+		</action>
+	</package>	
+</struts>
